@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   VictoryAxis,
@@ -190,12 +191,14 @@ class StackedPrices extends React.Component {
               '16', '17', '18', '19', '20', '21', '22', '23']}
           />
           <VictoryAxis
-            label="Price/h (€)"
+            label="€/kWh"
             style={{
               axisLabel: { fontSize: 6, padding: 30 },
               ticks: { stroke: 'grey', size: 1 },
               tickLabels: { fontSize: 6, padding: 5 },
             }}
+            tickValues={[0.000, 0.025, 0.050, 0.075, 0.100, 0.125, 0.150, 0.175, 0.200]}
+            tickFormat={['0.000', '0.025', '0.050', '0.075', '0.100', '0.125', '0.150', '0.175', '0.200']}
             dependentAxis
           />
           <VictoryGroup
@@ -279,5 +282,14 @@ class StackedPrices extends React.Component {
     );
   }
 }
+
+StackedPrices.propTypes = {
+  data: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.objectOf(PropTypes.number))).isRequired,
+  interpolation: PropTypes.string,
+};
+
+StackedPrices.defaultProps = {
+  interpolation: 'stepAfter',
+};
 
 export default StackedPrices;
