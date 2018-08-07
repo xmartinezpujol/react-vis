@@ -1,9 +1,4 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var COLOR_PALETTE = exports.COLOR_PALETTE = {
+export const COLOR_PALETTE = {
     transparent: 'transparent',
 
     // Primary
@@ -30,5 +25,5 @@ var COLOR_PALETTE = exports.COLOR_PALETTE = {
     neutral: '#6E7A83',
 
     // Gradients
-    grad_consumer: 'linear-gradient(90deg,#e6007d,#ffdc00)'
+    grad_consumer: 'linear-gradient(90deg,#e6007d,#ffdc00)',
 };
