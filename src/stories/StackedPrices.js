@@ -8,6 +8,7 @@ import StackedPrices from '../ui/StackedPrices';
 
 // Mock data
 import Prices from '../mocks/prices.json';
+console.log(Prices);
 
 const interpolationOptions = {
   stepAfter: 'stepAfter',

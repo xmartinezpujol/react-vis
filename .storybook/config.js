@@ -80,7 +80,6 @@ setOptions({
 // addon-info
 setDefaults({
   header: true,
-  propTables: false,
   styles,
 });
 
