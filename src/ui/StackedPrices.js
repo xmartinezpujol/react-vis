@@ -104,6 +104,7 @@ class StackedPrices extends React.Component {
           containerComponent={<VictoryVoronoiContainer voronoiBlacklist={voronoiBlacklist} />}
         >
           <VictoryLegend
+            groupComponent={<g data-cy="legend" />}
             x={70}
             y={0}
             title="Price plans"
@@ -178,6 +179,7 @@ class StackedPrices extends React.Component {
             ]}
           />
           <VictoryAxis
+            groupComponent={<g data-cy="axis-x" />}
             label="Hour"
             style={{
               axisLabel: { fontSize: 6, padding: 20 },
@@ -191,6 +193,7 @@ class StackedPrices extends React.Component {
               '16', '17', '18', '19', '20', '21', '22', '23']}
           />
           <VictoryAxis
+            groupComponent={<g data-cy="axis-y" />}
             label="€/kWh"
             style={{
               axisLabel: { fontSize: 6, padding: 30 },
@@ -202,6 +205,7 @@ class StackedPrices extends React.Component {
             dependentAxis
           />
           <VictoryGroup
+            groupComponent={<g data-cy="area" />}
             labels={d => `${d.y}€`}
             labelComponent={
               <VictoryTooltip
@@ -217,6 +221,7 @@ class StackedPrices extends React.Component {
             }}
           >
             <VictoryArea
+              groupComponent={<g data-cy="area-unprecio" />}
               name="unprecio"
               standalone
               interpolation={interpolation}
@@ -227,6 +232,7 @@ class StackedPrices extends React.Component {
             />
           </VictoryGroup>
           <VictoryGroup
+            groupComponent={<g data-cy="area" />}
             labels={d => `${d.y}€`}
             labelComponent={
               <VictoryTooltip
@@ -242,6 +248,7 @@ class StackedPrices extends React.Component {
             }}
           >
             <VictoryArea
+              groupComponent={<g data-cy="area-dosprecios" />}
               name="dosprecios"
               standalone
               interpolation={interpolation}
@@ -252,6 +259,7 @@ class StackedPrices extends React.Component {
             />
           </VictoryGroup>
           <VictoryGroup
+            groupComponent={<g data-cy="area" />}
             labels={d => `${d.y}€`}
             labelComponent={
               <VictoryTooltip
@@ -268,6 +276,7 @@ class StackedPrices extends React.Component {
             }}
           >
             <VictoryArea
+              groupComponent={<g data-cy="area-multiprecio" />}
               name="multiprecio"
               standalone
               interpolation={interpolation}

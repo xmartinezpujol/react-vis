@@ -61,6 +61,7 @@ class RangePrices extends React.Component {
           }}
         >
           <VictoryAxis
+            groupComponent={<g data-cy="axis-x" />}
             label="Hora del día"
             style={{
               axisLabel: { fontSize: 6, padding: 20 },
@@ -74,6 +75,7 @@ class RangePrices extends React.Component {
               '17', '18', '19', '20', '21', '22', '23']}
           />
           <VictoryAxis
+            groupComponent={<g data-cy="axis-y" />}
             style={{
               ticks: { stroke: 'grey', size: 1 },
               tickLabels: { fontSize: 6, padding: 5 },
@@ -81,6 +83,7 @@ class RangePrices extends React.Component {
             dependentAxis
           />
           <VictoryGroup
+            groupComponent={<g data-cy="bars" />}
             horizontal
             offset={6}
             style={{ data: { width: 5 } }}
@@ -88,6 +91,7 @@ class RangePrices extends React.Component {
           >
             {planData.map((planBar, index) => (
               <VictoryBar
+                groupComponent={<g data-cy="range-bar" />}
                 key={`bartype-${index}`}
                 data={planBar}
               />
